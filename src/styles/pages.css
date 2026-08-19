@@ -1,4 +1,4 @@
-/* HireAxis Pages Stylesheet — Pixel-Perfect Canva Recreation */
+/* HireAxis Pages Stylesheet: Pixel-Perfect Canva Recreation */
 
 /* ==========================================================================
    1. HOME PAGE SPECIFIC STYLES
@@ -1143,7 +1143,7 @@
 }
 
 /* ========================================================================
-   Final desktop calibration — preserves the Canva composition at 1366px.
+   Final desktop calibration: preserves the Canva composition at 1366px.
    ======================================================================== */
 @media (min-width: 1025px) {
   /* Home Page Desktop Calibration */
@@ -1160,7 +1160,6 @@
   .home-hero-buttons { gap: 16px; }
   .home-hero-buttons .btn { padding: 16px 32px; font-size: 17px; }
   .hero-laptop-img { max-width: none; width: 100%; }
-  .hero-laptop-img:hover { transform: translateY(-3px) scale(1.008); filter: drop-shadow(0 12px 16px rgba(1, 62, 65, .11)); }
   .home-stats-bar { width: 100%; max-width: 100%; padding: 24px 60px; margin-top: 36px; }
   .stat-item { gap: 18px; }
   .stat-icon-wrap { width: 60px; height: 60px; transition: transform 180ms ease, background-color 180ms ease; }
