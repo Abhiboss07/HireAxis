@@ -301,6 +301,7 @@ img {
   background-color: var(--color-primary-dark);
   color: var(--color-white);
   padding-top: 50px;
+  padding-bottom: 28px;
   margin-top: auto;
 }
 
@@ -308,7 +309,7 @@ img {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 48px;
-  padding-bottom: 44px;
+  padding-bottom: 32px;
   max-width: 1400px;
 }
 
@@ -375,16 +376,16 @@ img {
   color: var(--color-white);
 }
 
-.footer-bottom {
-  background-color: var(--color-white);
-  color: var(--color-text-dark);
-  padding: 14px 0;
-  text-align: left;
+.footer-bottom-integrated {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 22px;
+  margin-top: 10px;
 }
 
-.footer-bottom .container {
-  font-size: 13px;
+.footer-copyright-text {
+  font-size: 14px;
   font-weight: 700;
+  color: var(--color-white);
   letter-spacing: -0.01em;
 }
 

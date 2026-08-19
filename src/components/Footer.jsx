@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container footer-content">
+      <div className="container">
+        <div className="footer-content">
         {/* Brand & Contact */}
         <div className="footer-brand">
           <Link to="/" className="logo-link">
@@ -45,20 +46,22 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3 - Socials */}
-        <div className="footer-column">
-          <ul className="footer-social-links">
-            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-          </ul>
+          {/* Column 3 - Socials */}
+          <div className="footer-column">
+            <ul className="footer-social-links">
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+              <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div className="footer-bottom">
-        <div className="container">
-          ©2026 HireAxis. All rights reserved.
+        {/* Integrated Bottom Copyright */}
+        <div className="footer-bottom-integrated">
+          <p className="footer-copyright-text">
+            ©2026 HireAxis. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
