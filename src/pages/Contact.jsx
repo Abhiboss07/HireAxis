@@ -167,7 +167,7 @@ export default function Contact() {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Resume upload [PDF, DOC, DOCX — max 5 MB]</label>
+                  <label className="form-label">Resume upload [PDF, DOC, DOCX, max 5 MB]</label>
                   <div className="file-upload-box">
                     <label className="file-upload-btn" htmlFor="resume-file">
                       Choose File

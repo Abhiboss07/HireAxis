@@ -42,7 +42,7 @@ export default function About() {
             </div>
             <div className="about-exists-right">
               <p className="about-exists-text">
-                A serious job search is a part-time job: 10–15 hours a week of searching, filtering, form-filling. The people best placed to get hired — working professionals, students in their final stretch, newcomers settling into a country — are exactly the people who don't have those hours. HireAxis was built to close that gap: a dedicated team that runs the application workload with the consistency it demands, while candidates spend their limited time on the part that actually needs them — interviews.
+                A serious job search is a part-time job: 10 to 15 hours a week of searching, filtering, and form-filling. The people best placed to get hired (working professionals, students in their final stretch, newcomers settling into a country) are exactly the people who don't have those hours. HireAxis was built to close that gap: a dedicated team that runs the application workload with the consistency it demands, while candidates spend their limited time on the part that actually needs them: interviews.
               </p>
             </div>
           </div>
@@ -113,10 +113,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* What HireAxis Is — and Isn't */}
+        {/* What HireAxis Is and Isn't */}
         <div className="section-wrapper">
           <h2 className="section-title">
-            <span className="black-text">What HireAxis Is &mdash; </span>and Isn't
+            <span className="black-text">What HireAxis Is </span>and Isn't
           </h2>
 
           <table className="about-table">

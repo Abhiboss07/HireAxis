@@ -9,7 +9,7 @@ export default function FAQ() {
     },
     {
       question: "Can someone apply to jobs on my behalf?",
-      answer: "Yes — with your consent, a service can legally submit applications for you using your resume and details. Employers evaluate the same candidate either way: you. HireAxis simply removes the 10–15 weekly hours of searching and form-filling."
+      answer: "Yes. With your consent, a service can legally submit applications for you using your resume and details. Employers evaluate the same candidate either way: you. HireAxis simply removes the 10 to 15 weekly hours of searching and form-filling."
     },
     {
       question: "Is HireAxis a recruitment agency?",
@@ -17,7 +17,7 @@ export default function FAQ() {
     },
     {
       question: "Do job application services actually work?",
-      answer: "They work at what they do: sustaining application volume and consistency that individuals rarely maintain. Interviews remain a function of your qualifications and the market — which is why we publish our process and tracker instead of promising outcomes."
+      answer: "They work at what they do: sustaining application volume and consistency that individuals rarely maintain. Interviews remain a function of your qualifications and the market, which is why we publish our process and tracker instead of promising outcomes."
     }
   ];
 

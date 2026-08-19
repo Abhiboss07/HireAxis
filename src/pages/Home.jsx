@@ -6,15 +6,15 @@ export default function Home() {
   const homeFaqItems = [
     {
       question: "Can someone really apply to jobs for me?",
-      answer: "Yes. A job application service like HireAxis legally applies to roles on your behalf using your resume and profile, with your consent. You remain the candidate; we handle the search, tailoring, and submission workload — you attend the interviews."
+      answer: "Yes. A job application service like HireAxis legally applies to roles on your behalf using your resume and profile, with your consent. You remain the candidate; we handle the search, tailoring, and submission workload, while you attend the interviews."
     },
     {
       question: "Is it worth paying someone to apply for jobs?",
-      answer: "If you're applying to fewer than 10 roles a week, the maths usually favours help. Landing interviews is a volume-and-consistency game: HireAxis submits 50–200 tailored applications per package, which is difficult to sustain alongside a job, studies, or a move abroad."
+      answer: "If you're applying to fewer than 10 roles a week, the maths usually favours help. Landing interviews is a volume and consistency game: HireAxis submits 50 to 200 tailored applications per package, which is difficult to sustain alongside a job, studies, or a move abroad."
     },
     {
       question: "Do you guarantee a job?",
-      answer: "No — and you should be wary of any service that does. We guarantee consistent, human reviewed, fully tracked applications. Interview and hiring decisions always rest with employers."
+      answer: "No, and you should be wary of any service that does. We guarantee consistent, human reviewed, fully tracked applications. Interview and hiring decisions always rest with employers."
     }
   ];
 
@@ -39,7 +39,7 @@ export default function Home() {
               The Job Application Service That Applies on Your Behalf
             </h1>
             <p className="home-hero-desc">
-              You bring valid work rights and a career goal. HireAxis handles the tailoring, and applying — submitting human-reviewed applications for you every week across 9 countries, and flagging you the moment an interview comes in.
+              You bring valid work rights and a career goal. HireAxis handles the tailoring, and applying, submitting human-reviewed applications for you every week across 9 countries, and flagging you the moment an interview comes in.
             </p>
             <div className="home-hero-buttons">
               <Link to="/contact" className="btn btn-dark">
@@ -118,7 +118,7 @@ export default function Home() {
             className="quote-banner-img" 
           />
           <div className="quote-banner-text-overlay">
-            HireAxis is a job application service that searches, tailors, and submits job applications behalf of candidates who already hold valid work rights in their target country. It is not a recruitment agency, visa consultancy, or sponsorship provider — it is dedicated application support for people who are qualified to work but don't have 15 hours a week to spend on job boards.
+            HireAxis is a job application service that searches, tailors, and submits job applications behalf of candidates who already hold valid work rights in their target country. It is not a recruitment agency, visa consultancy, or sponsorship provider; it is dedicated application support for people who are qualified to work but don't have 15 hours a week to spend on job boards.
           </div>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function Home() {
               <div className="step-connector-dots"></div>
               <h3 className="step-title">3. We apply every week.</h3>
               <p className="step-desc">
-                Real people find relevant openings across job boards and career pages, tailor each submission, and apply on your behalf — consistently, every single week.
+                Real people find relevant openings across job boards and career pages, tailor each submission, and apply on your behalf, consistently, every single week.
               </p>
             </div>
 
@@ -401,7 +401,7 @@ export default function Home() {
               </div>
               <h3 className="why-card-title">Applications, not promises.</h3>
               <p className="why-card-desc">
-                We guarantee consistent, quality submissions — and we're that hiring decisions always belong to employers.
+                We guarantee consistent, quality submissions, knowing that hiring decisions always belong to employers.
               </p>
             </div>
 

@@ -15,7 +15,7 @@ export default function Services() {
           <span className="highlight">Job Application Assistance, </span>End to End
         </h1>
         <p className="page-subtitle">
-          Every HireAxis package bundles four services around one goal: getting your profile front of the right employers, every week, without you living on job boards. Here's exactly what you get — no vague "career coaching" filler.
+          Every HireAxis package bundles four services around one goal: getting your profile front of the right employers, every week, without you living on job boards. Here's exactly what you get, with no vague "career coaching" filler.
         </p>
 
         {/* 1. Weekly Job Applications */}
@@ -28,9 +28,9 @@ export default function Services() {
               The core of the service. Our team searches job boards, company career pages, and industry sites in your target country, matches openings to the role and location you've set, tailors your application, and submits it on your behalf.
             </p>
             <ul className="services-checklist">
-              <li>50–200 applications per package, spread consistently week by week</li>
+              <li>50 to 200 applications per package, spread consistently week by week</li>
               <li>Each application matched to your target role, seniority, and location</li>
-              <li>100% human-reviewed before submission — no bulk-blast automation</li>
+              <li>100% human-reviewed before submission, with no bulk-blast automation</li>
               <li>Cover notes adapted to each employer where the application requires one</li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ export default function Services() {
             Why weekly consistency beats bursts
           </h3>
           <p className="services-consistency-text">
-            Employers post on rolling schedules, and early applicants are up to [4x] more likely to be shortlisted. A steady weekly cadence means your profile lands while roles are fresh — not in a once-a-month batch after positions have closed.
+            Employers post on rolling schedules, and early applicants are up to [4x] more likely to be shortlisted. A steady weekly cadence means your profile lands while roles are fresh, not in a once-a-month batch after positions have closed.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Services() {
               ATS Resume Optimization
             </h2>
             <p className="services-feature-text">
-              Over 90% of large employers screen resumes with applicant tracking systems (ATS) human sees them. We rewrite and reformat your resume so it parses cleanly, mirrors the keywords of your target role, and matches the CV conventions of your target country — a German Lebenslauf, a UK CV, and a US resume are not the same document.
+              Over 90% of large employers screen resumes with applicant tracking systems (ATS) human sees them. We rewrite and reformat your resume so it parses cleanly, mirrors the keywords of your target role, and matches the CV conventions of your target country (a German Lebenslauf, a UK CV, and a US resume are not the same document).
             </p>
             <ul className="services-checklist">
               <li>ATS-compatible structure and formatting</li>
@@ -85,7 +85,7 @@ export default function Services() {
               Live Application Tracking
             </h2>
             <p className="services-feature-text">
-              Every submission is logged the day it goes out: employer, role, date, and current status. always know what's submitted, what's pending, and what's had a response — and you can check it any time, from any device. When an employer replies, we flag the interview to you the same day.
+              Every submission is logged the day it goes out: employer, role, date, and current status. always know what's submitted, what's pending, and what's had a response, and you can check it any time, from any device. When an employer replies, we flag the interview to you the same day.
             </p>
           </div>
           <div className="services-feature-right">
@@ -111,7 +111,7 @@ export default function Services() {
               Interview Preparation Support
             </h2>
             <p className="services-feature-text">
-              When responses arrive, we help you convert them: role-specific preparation notes, questions for your industry in your target country, and guidance on local interview norms — from UK competency formats to US behavioural rounds.
+              When responses arrive, we help you convert them: role-specific preparation notes, questions for your industry in your target country, and guidance on local interview norms, from UK competency formats to US behavioural rounds.
             </p>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function Services() {
             What HireAxis Doesn't Do (and why that protects you)
           </h2>
           <p className="services-what-doesnt-do-text">
-            We are not a recruitment agency, migration consultancy, visa service, or sponsorship We don't charge employers, we don't sell your data, and we never guarantee job offers. If a service in this space promises visas or guaranteed employment, that's the sign to walk away. HireAxis does one thing — professional application support for people who already hold work rights — and does it transparently.
+            We are not a recruitment agency, migration consultancy, visa service, or sponsorship provider. We don't charge employers, we don't sell your data, and we never guarantee job offers. If a service in this space promises visas or guaranteed employment, that's the sign to walk away. HireAxis does one thing: professional application support for people who already hold work rights, and does it transparently.
           </p>
         </div>
 

@@ -15,7 +15,7 @@ export default function Pricing() {
           <span className="highlight">Transparent Pricing. Published, Flat, </span>Per Package.
         </h1>
         <p className="page-subtitle">
-          No "book a call to find out the price." HireAxis charges a flat package rate that only by country. Every package includes resume optimization, weekly submissions, tracking, and interview alerts — the tiers differ only in application volume.
+          No "book a call to find out the price." HireAxis charges a flat package rate that varies only by country. Every package includes resume optimization, weekly submissions, tracking, and interview alerts; the tiers differ only in application volume.
         </p>
 
         {/* Package Comparison Table */}
