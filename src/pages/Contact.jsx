@@ -12,9 +12,38 @@ export default function Contact() {
     agreePrivacy: false
   });
 
+  const [fileData, setFileData] = useState({
+    name: '',
+    type: '',
+    base64: ''
+  });
+
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert("File size exceeds 5 MB. Please upload a smaller file.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = reader.result;
+        const base64 = typeof result === 'string' && result.includes(',') ? result.split(',')[1] : '';
+        setFileData({
+          name: file.name,
+          type: file.type || 'application/pdf',
+          base64: base64
+        });
+        setFormData((prev) => ({ ...prev, fileName: file.name }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +60,9 @@ export default function Contact() {
       targetCountry: formData.targetCountry,
       workRights: formData.workRights === 'yes' ? 'Yes' : 'No',
       targetRole: formData.targetRole,
-      fileName: formData.fileName || 'No file uploaded',
+      fileName: fileData.name || formData.fileName || '',
+      fileData: fileData.base64 || '',
+      fileMimeType: fileData.type || 'application/pdf',
       agreePrivacy: formData.agreePrivacy ? 'Yes' : 'No'
     };
 
@@ -218,11 +249,7 @@ export default function Contact() {
                       type="file" 
                       accept=".pdf,.doc,.docx"
                       style={{ display: 'none' }}
-                      onChange={(e) => {
-                        if (e.target.files && e.target.files[0]) {
-                          setFormData({ ...formData, fileName: e.target.files[0].name });
-                        }
-                      }}
+                      onChange={handleFileChange}
                     />
                     <span style={{ fontSize: '13px', color: formData.fileName ? '#111827' : '#94A3B8' }}>
                       {formData.fileName || "No file chosen"}
