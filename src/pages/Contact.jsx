@@ -13,10 +13,51 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const sheetUrl = import.meta.env.VITE_GOOGLE_SHEET_URL;
+
+    const payload = {
+      timestamp: new Date().toLocaleString(),
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      targetCountry: formData.targetCountry,
+      workRights: formData.workRights === 'yes' ? 'Yes' : 'No',
+      targetRole: formData.targetRole,
+      fileName: formData.fileName || 'No file uploaded',
+      agreePrivacy: formData.agreePrivacy ? 'Yes' : 'No'
+    };
+
+    if (sheetUrl && sheetUrl.trim().length > 0) {
+      try {
+        await fetch(sheetUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+        setSubmitted(true);
+      } catch (err) {
+        console.error('Error submitting form to Google Sheet:', err);
+        setSubmitted(true);
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      }, 400);
+    }
   };
 
   return (
@@ -200,8 +241,13 @@ export default function Contact() {
                   <span>I agree to the Privacy Policy and consent to HireAxis processing my data to respond to enquiry.*</span>
                 </label>
 
-                <button type="submit" className="btn btn-dark" style={{ marginTop: '12px' }}>
-                  Submit Enquiry &rarr;
+                <button 
+                  type="submit" 
+                  className="btn btn-dark" 
+                  style={{ marginTop: '12px' }}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Enquiry \u2192"}
                 </button>
               </form>
             )}
