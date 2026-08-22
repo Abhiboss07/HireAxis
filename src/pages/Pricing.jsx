@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import CheckoutButton from '../components/CheckoutButton';
+import {
+  PACKAGES,
+  INCLUDED_IN_EVERY_PACKAGE,
+  formatPrice,
+  formatUnitPrice
+} from '../data/packages';
 
 export default function Pricing() {
+  const [status, setStatus] = useState(null);
+  const cheapest = PACKAGES.reduce(
+    (low, pkg) => (pkg.amountMinor < low.amountMinor ? pkg : low),
+    PACKAGES[0]
+  );
+
   return (
     <div className="pricing-page section-wrapper">
       <div className="container">
@@ -23,44 +36,81 @@ export default function Pricing() {
           <span className="black-text">Choose Your </span>Package
         </h2>
 
+        {status && (
+          <div className={`checkout-status checkout-status-${status.type}`} role="status">
+            <span className="checkout-status-icon" aria-hidden="true">
+              {status.type === 'success' ? '✓' : '!'}
+            </span>
+            <p>{status.message}</p>
+            <button type="button" onClick={() => setStatus(null)} aria-label="Dismiss message">✕</button>
+          </div>
+        )}
+
         <div className="pricing-table-container">
           <table className="pricing-table">
             <thead>
               <tr>
                 <th style={{ width: '22%' }}></th>
-                <th style={{ width: '26%' }}>STARTER</th>
-                <th style={{ width: '26%' }} className="popular">GROWTH<br /><span style={{ fontSize: '13px', fontWeight: 500 }}>(most popular)</span></th>
-                <th style={{ width: '26%' }}>PRO</th>
+                {PACKAGES.map((pkg) => (
+                  <th
+                    key={pkg.id}
+                    style={{ width: `${78 / PACKAGES.length}%` }}
+                    className={pkg.popular ? 'popular' : undefined}
+                  >
+                    {pkg.name.toUpperCase()}
+                    {pkg.popular && (
+                      <>
+                        <br />
+                        <span style={{ fontSize: '13px', fontWeight: 500 }}>(most popular)</span>
+                      </>
+                    )}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td className="row-label">Applications</td>
-                <td className="cell-data">50 tailored applications</td>
-                <td className="cell-data">100 tailored applications</td>
-                <td className="cell-data">200 tailored applications</td>
+                {PACKAGES.map((pkg) => (
+                  <td key={pkg.id} className="cell-data">{pkg.applications} tailored applications</td>
+                ))}
               </tr>
               <tr>
                 <td className="row-label">Best for</td>
-                <td className="cell-data">Testing the market or a focused niche search</td>
-                <td className="cell-data">Most active job seekers</td>
-                <td className="cell-data">Career switchers &amp; competitive markets</td>
+                {PACKAGES.map((pkg) => (
+                  <td key={pkg.id} className="cell-data">{pkg.bestFor}</td>
+                ))}
               </tr>
               <tr>
                 <td className="row-label">Price</td>
-                <td className="cell-data">from [$X] (varies by country)</td>
-                <td className="cell-data">from [$X]</td>
-                <td className="cell-data">from [$X]</td>
+                {PACKAGES.map((pkg) => (
+                  <td key={pkg.id} className="cell-data">
+                    <span className="pricing-amount">{formatPrice(pkg.amountMinor)}</span>
+                    <span className="pricing-amount-note">one-time</span>
+                  </td>
+                ))}
               </tr>
               <tr>
                 <td className="row-label">Includes</td>
-                <td colSpan="3" style={{ textAlign: 'center', color: 'var(--color-text-body)', fontWeight: 500 }}>
-                  ATS resume optimization &middot; weekly submissions &middot; live tracker &middot; same-day interview alerts &middot; market &amp; role strategy &middot; interview prep support
+                <td colSpan={PACKAGES.length} style={{ textAlign: 'center', color: 'var(--color-text-body)', fontWeight: 500 }}>
+                  {INCLUDED_IN_EVERY_PACKAGE.join(' · ')}
                 </td>
+              </tr>
+              <tr>
+                <td className="row-label"></td>
+                {PACKAGES.map((pkg) => (
+                  <td key={pkg.id} className="cell-data">
+                    <CheckoutButton pkg={pkg} onStatus={setStatus} />
+                  </td>
+                ))}
               </tr>
             </tbody>
           </table>
         </div>
+
+        <p className="pricing-secure-note">
+          Payments are processed securely by Razorpay. Card details never touch HireAxis servers.
+        </p>
 
         {/* Cost Section */}
         <div className="pricing-cost-section">
@@ -69,7 +119,7 @@ export default function Pricing() {
               <span className="black-text">What Does a </span>Job Application Service Cost?
             </h2>
             <p style={{ fontSize: '15.5px', color: 'var(--color-text-body)', lineHeight: 1.65 }}>
-              HireAxis packages start at [$X] for 50 applications, which works out to roughly [$X] per tailored, human-reviewed application. Pricing varies by country and is always displayed before you enroll. There are no subscriptions, no hidden fees, and no charges to employers.
+              HireAxis packages start at {formatPrice(cheapest.amountMinor)} for {cheapest.applications} applications, which works out to roughly {formatUnitPrice(cheapest)} per tailored, human-reviewed application. Pricing is always displayed before you enroll. There are no subscriptions, no hidden fees, and no charges to employers.
             </p>
           </div>
           <div className="pricing-cost-right">

@@ -9,6 +9,8 @@ import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import MotionProvider from './components/MotionProvider';
+import { ApplicationModalProvider } from './components/ApplicationModal';
+import ChatBot from './components/ChatBot';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -27,19 +29,22 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <MotionProvider />
-      <Navbar />
-      <main style={{ flex: '1 0 auto' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </main>
-      <Footer />
+      <ApplicationModalProvider>
+        <Navbar />
+        <main style={{ flex: '1 0 auto' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ChatBot />
+      </ApplicationModalProvider>
     </BrowserRouter>
   );
 }

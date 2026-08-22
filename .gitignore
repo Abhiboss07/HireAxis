@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Environment secrets (never commit: contains RAZORPAY_KEY_SECRET)
+.env
+.env.*
+!.env.example
+.vercel
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
