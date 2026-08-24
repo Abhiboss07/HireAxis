@@ -146,6 +146,9 @@ export default async function handler(req, res) {
             source: 'gemini'
           });
         }
+      } else {
+        const errData = await response.json().catch(() => null);
+        console.warn('Gemini API returned error status:', response.status, errData);
       }
     } catch (err) {
       console.error('Gemini API call failed, falling back:', err);
