@@ -2,23 +2,25 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CHAT_GREETING, CHAT_HANDOFF, CHAT_TOPICS } from '../data/chatFlow';
 import { useApplicationModal } from './ApplicationModal';
+import { queryHireAxisAI } from '../lib/aiChat';
 
-// A scripted FAQ assistant: topic chips -> question chips -> canned answer.
-// No network calls and no model, so it is instant and can never improvise.
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([{ from: 'bot', text: CHAT_GREETING }]);
   const [activeTopic, setActiveTopic] = useState(null);
+  const [inputText, setInputText] = useState('');
+  const [isThinking, setIsThinking] = useState(false);
   const navigate = useNavigate();
   const { open: openApplicationModal } = useApplicationModal();
   const threadRef = useRef(null);
   const panelRef = useRef(null);
+  const inputRef = useRef(null);
 
   // Keep the newest message in view as the thread grows.
   useEffect(() => {
     const thread = threadRef.current;
     if (thread) thread.scrollTop = thread.scrollHeight;
-  }, [messages, activeTopic, isOpen]);
+  }, [messages, activeTopic, isOpen, isThinking]);
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -26,6 +28,9 @@ export default function ChatBot() {
       if (event.key === 'Escape') setIsOpen(false);
     };
     document.addEventListener('keydown', handleKeyDown);
+    if (inputRef.current) {
+      setTimeout(() => inputRef.current?.focus(), 150);
+    }
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
 
@@ -35,7 +40,7 @@ export default function ChatBot() {
     setActiveTopic(topic);
     say([
       { from: 'user', text: topic.label },
-      { from: 'bot', text: `Sure - here's what people usually ask about ${topic.label.toLowerCase()}.` }
+      { from: 'bot', text: `Sure! Here are the common questions about ${topic.label.toLowerCase()}:` }
     ]);
   };
 
@@ -44,6 +49,27 @@ export default function ChatBot() {
       { from: 'user', text: question.q },
       { from: 'bot', text: question.a, cta: question.cta }
     ]);
+  };
+
+  const handleCustomSubmit = async (e) => {
+    if (e) e.preventDefault();
+    const query = inputText.trim();
+    if (!query || isThinking) return;
+
+    setInputText('');
+    const userTurn = { from: 'user', text: query };
+    say([userTurn]);
+    setIsThinking(true);
+
+    try {
+      const result = await queryHireAxisAI(query, messages);
+      say([{ from: 'bot', text: result.text, cta: result.cta }]);
+    } catch (err) {
+      console.error('AI chat error:', err);
+      say([{ from: 'bot', text: "HireAxis provides dedicated job application support across 9 countries. You can check our pricing or reach out directly to our team.", cta: { label: "View Pricing", to: "/pricing" } }]);
+    } finally {
+      setIsThinking(false);
+    }
   };
 
   const handleCta = (cta) => {
@@ -99,8 +125,8 @@ export default function ChatBot() {
           <header className="chatbot-header">
             <div className="chatbot-avatar" aria-hidden="true">HA</div>
             <div className="chatbot-header-text">
-              <span className="chatbot-header-title">HireAxis Assistant</span>
-              <span className="chatbot-header-status">Answers to common questions</span>
+              <span className="chatbot-header-title">HireAxis AI Assistant</span>
+              <span className="chatbot-header-status">Instant answers &amp; custom advice</span>
             </div>
             <button type="button" className="chatbot-header-close" onClick={() => setIsOpen(false)} aria-label="Close chat">
               ✕
@@ -118,6 +144,15 @@ export default function ChatBot() {
                 )}
               </div>
             ))}
+            {isThinking && (
+              <div className="chat-msg chat-msg-bot">
+                <div className="chat-bubble chat-bubble-typing">
+                  <span className="typing-dot"></span>
+                  <span className="typing-dot"></span>
+                  <span className="typing-dot"></span>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="chatbot-options">
@@ -145,6 +180,30 @@ export default function ChatBot() {
               </>
             )}
           </div>
+
+          {/* Custom AI Input */}
+          <form className="chatbot-input-form" onSubmit={handleCustomSubmit}>
+            <input
+              ref={inputRef}
+              type="text"
+              className="chatbot-input"
+              placeholder="Ask a question..."
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              disabled={isThinking}
+            />
+            <button
+              type="submit"
+              className="chatbot-send-btn"
+              disabled={isThinking || !inputText.trim()}
+              aria-label="Send question"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
         </div>
       )}
     </>
