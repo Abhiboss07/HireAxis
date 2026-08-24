@@ -162,7 +162,7 @@ export default function About() {
         </div>
 
         {/* Bottom CTA Banner with Dual Buttons */}
-        <div className="bottom-cta-banner" style={{ marginTop: '60px' }}>
+        <div className="bottom-cta-banner">
           <img 
             src="/images/bottom_cta_banner.png" 
             alt="Autopilot Search Banner" 

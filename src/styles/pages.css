@@ -873,6 +873,15 @@
   transform: translateY(-4px) scale(1.08);
 }
 
+.about-page {
+  padding-bottom: 24px;
+}
+
+.about-page .bottom-cta-banner {
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+
 /* ==========================================================================
    5. CONTACT PAGE SPECIFIC STYLES
    ========================================================================== */
@@ -1249,6 +1258,7 @@
   .pricing-faq-card-text { font-size: 15px; }
 
   /* About and Contact */
+  .about-page { padding-bottom: 24px; }
   .about-section { margin-top: 32px; margin-bottom: 32px; }
   .about-exists-section { gap: 40px; margin-top: 20px; margin-bottom: 36px; }
   .about-exists-text { font-size: 17px; }
@@ -1262,6 +1272,7 @@
   .about-operate-section { margin: 32px 0 20px; }
   .about-operate-subtitle { font-size: 16px; max-width: 900px; }
   .about-flag-circle { width: 64px; height: 64px; font-size: 32px; }
+  .about-page .bottom-cta-banner { margin-top: 36px; margin-bottom: 20px; }
   .contact-hero-container { min-height: 660px; border-radius: 20px; margin-bottom: 52px; }
   .contact-form-card { max-width: 480px; padding: 32px 36px; margin: 28px 0 28px 40px; border-radius: 20px; }
   .contact-form-title { font-size: 28px; margin-bottom: 18px; }
