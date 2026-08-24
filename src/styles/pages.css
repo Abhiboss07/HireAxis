@@ -608,11 +608,13 @@
 .pricing-table th {
   background-color: var(--color-primary-dark);
   color: var(--color-white);
-  padding: 24px 20px;
+  padding: 22px 20px;
   font-size: 18px;
   font-weight: 800;
   text-align: center;
+  vertical-align: middle;
   border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.03em;
 }
 
 .pricing-table th.popular {
@@ -623,12 +625,15 @@
   padding: 18px 20px;
   border: 1px solid var(--color-border);
   font-size: 15px;
+  vertical-align: middle;
+  line-height: 1.5;
 }
 
 .pricing-table td.row-label {
   font-weight: 800;
   color: var(--color-text-dark);
   width: 22%;
+  text-align: left;
 }
 
 .pricing-table td.cell-data {

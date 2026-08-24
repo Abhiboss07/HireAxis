@@ -58,12 +58,6 @@ export default function Pricing() {
                     className={pkg.popular ? 'popular' : undefined}
                   >
                     {pkg.name.toUpperCase()}
-                    {pkg.popular && (
-                      <>
-                        <br />
-                        <span style={{ fontSize: '13px', fontWeight: 500 }}>(most popular)</span>
-                      </>
-                    )}
                   </th>
                 ))}
               </tr>
