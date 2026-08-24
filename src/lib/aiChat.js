@@ -63,36 +63,44 @@ async function callDirectGemini(apiKey, userMessage, messageHistory = []) {
     parts: [{ text: userMessage }]
   });
 
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: HIREAXIS_SYSTEM_PROMPT }]
-        },
-        contents: contents,
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 350
+  const candidateModels = ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-2.5-flash-lite', 'gemini-1.5-flash'];
+  for (const modelName of candidateModels) {
+    try {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            systemInstruction: {
+              parts: [{ text: HIREAXIS_SYSTEM_PROMPT }]
+            },
+            contents: contents,
+            generationConfig: {
+              temperature: 0.7,
+              maxOutputTokens: 350
+            }
+          })
         }
-      })
-    }
-  );
+      );
 
-  if (!response.ok) {
-    throw new Error(`Gemini API error: ${response.statusText}`);
+      if (response.ok) {
+        const data = await response.json();
+        const candidate = data.candidates && data.candidates[0];
+        const replyText = candidate?.content?.parts?.[0]?.text;
+        if (replyText) {
+          return {
+            text: replyText.trim(),
+            cta: getCtaForResponse(replyText)
+          };
+        }
+      }
+    } catch (err) {
+      console.warn(`Direct call to ${modelName} failed:`, err);
+    }
   }
 
-  const data = await response.json();
-  const candidate = data.candidates && data.candidates[0];
-  const replyText = candidate?.content?.parts?.[0]?.text;
-  if (!replyText) throw new Error('No candidate content in Gemini response');
-  return {
-    text: replyText.trim(),
-    cta: getCtaForResponse(replyText)
-  };
+  throw new Error('All Gemini model candidates failed');
 }
 
 export async function queryHireAxisAI(userMessage, messageHistory = []) {

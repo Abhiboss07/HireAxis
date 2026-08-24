@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 function apiDevPlugin() {
@@ -39,22 +39,27 @@ function apiDevPlugin() {
   };
 }
 
-export default defineConfig({
-  plugins: [react(), apiDevPlugin()],
-  server: {
-    port: 3000,
-    host: true
-  },
-  build: {
-    target: 'esnext',
-    cssCodeSplit: true,
-    chunkSizeWarningLimit: 1000,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom']
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+  Object.assign(process.env, env);
+
+  return {
+    plugins: [react(), apiDevPlugin()],
+    server: {
+      port: 3000,
+      host: true
+    },
+    build: {
+      target: 'esnext',
+      cssCodeSplit: true,
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom', 'react-router-dom']
+          }
         }
       }
     }
-  }
+  };
 });

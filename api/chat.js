@@ -121,37 +121,45 @@ export default async function handler(req, res) {
         parts: [{ text: message }]
       });
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiApiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [{ text: HIREAXIS_SYSTEM_PROMPT }]
-          },
-          contents: contents,
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 300
-          }
-        })
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const candidate = data.candidates && data.candidates[0];
-        const replyText = candidate?.content?.parts?.[0]?.text;
-        if (replyText) {
-          return res.status(200).json({
-            text: replyText.trim(),
-            source: 'gemini'
+      const candidateModels = ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-2.5-flash-lite', 'gemini-1.5-flash'];
+      for (const modelName of candidateModels) {
+        try {
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${geminiApiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              systemInstruction: {
+                parts: [{ text: HIREAXIS_SYSTEM_PROMPT }]
+              },
+              contents: contents,
+              generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 350
+              }
+            })
           });
+
+          if (response.ok) {
+            const data = await response.json();
+            const candidate = data.candidates && data.candidates[0];
+            const replyText = candidate?.content?.parts?.[0]?.text;
+            if (replyText) {
+              return res.status(200).json({
+                text: replyText.trim(),
+                source: 'gemini',
+                model: modelName
+              });
+            }
+          } else {
+            const errData = await response.json().catch(() => null);
+            console.warn(`Gemini model ${modelName} returned status:`, response.status, errData);
+          }
+        } catch (innerErr) {
+          console.warn(`Error calling Gemini model ${modelName}:`, innerErr);
         }
-      } else {
-        const errData = await response.json().catch(() => null);
-        console.warn('Gemini API returned error status:', response.status, errData);
       }
     } catch (err) {
-      console.error('Gemini API call failed, falling back:', err);
+      console.error('Gemini API calls failed, falling back:', err);
     }
   }
 
