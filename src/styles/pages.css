@@ -565,6 +565,10 @@
   line-height: 1.65;
 }
 
+.services-page {
+  padding-bottom: 24px;
+}
+
 .services-bottom-cta-card {
   display: flex;
   align-items: center;
@@ -573,7 +577,8 @@
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  margin-bottom: 60px;
+  margin-top: 36px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
@@ -1255,6 +1260,7 @@
   .home-page .bottom-cta-banner .btn { padding: 16px 36px; font-size: 18px; border-radius: 8px; flex-shrink: 0; }
 
   /* Services */
+  .services-page { padding-bottom: 24px; }
   .services-feature-row { gap: 58px; margin-bottom: 76px; }
   .services-feature-img { border-radius: 0; box-shadow: none; }
   .services-feature-row:first-of-type .services-feature-img { height: 420px; object-fit: cover; }
@@ -1264,8 +1270,8 @@
   .services-consistency-banner { padding: 40px 56px; border-radius: 0; margin: 62px -53px; }
   .services-consistency-title { font-size: 32px; }
   .services-consistency-text { font-size: 17px; max-width: 1020px; }
-  .services-what-doesnt-do { max-width: 1120px; margin: 84px auto; }
-  .services-bottom-cta-card { padding: 38px 42px; margin-bottom: 78px; }
+  .services-what-doesnt-do { max-width: 1120px; margin: 64px auto; }
+  .services-bottom-cta-card { padding: 38px 42px; margin-top: 40px; margin-bottom: 24px; }
   .services-cta-left h3 { font-size: 30px; }
   .services-cta-left p { font-size: 17px; }
 
