@@ -27,7 +27,7 @@ export default function About() {
         </h1>
 
         {/* Why HireAxis Exists */}
-        <div className="section-wrapper">
+        <div className="about-section">
           <h2 className="section-title">
             <span className="black-text">Why HireAxis </span>Exists
           </h2>
@@ -49,7 +49,7 @@ export default function About() {
         </div>
 
         {/* What We Believe */}
-        <div className="section-wrapper">
+        <div className="about-section">
           <h2 className="section-title">
             <span className="black-text">What We </span>Believe
           </h2>
@@ -114,7 +114,7 @@ export default function About() {
         </div>
 
         {/* What HireAxis Is and Isn't */}
-        <div className="section-wrapper">
+        <div className="about-section">
           <h2 className="section-title">
             <span className="black-text">What HireAxis Is </span>and Isn't
           </h2>

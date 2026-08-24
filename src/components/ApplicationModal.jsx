@@ -4,8 +4,8 @@ import ApplicationForm from './ApplicationForm';
 
 // The popup opens on the home page, every time it is opened.
 const AUTO_OPEN_PATHS = ['/'];
-// Just enough delay for the hero to paint first, so it does not flash over a blank page.
-const AUTO_OPEN_DELAY_MS = 700;
+// 3-5 second delay before opening the pop-up modal on the home page.
+const AUTO_OPEN_DELAY_MS = 4000;
 // Once someone has actually submitted, stop showing it for the rest of the visit.
 const SUBMITTED_KEY = 'hireaxis:lead-submitted';
 
