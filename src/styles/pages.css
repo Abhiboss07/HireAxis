@@ -741,6 +741,23 @@
   line-height: 1.55;
 }
 
+.pricing-page {
+  padding-bottom: 24px;
+}
+
+.pricing-page .bottom-cta-banner {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.pricing-page .bottom-cta-banner .btn {
+  padding: 16px 36px;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
 /* ==========================================================================
    4. ABOUT PAGE SPECIFIC STYLES
    ========================================================================== */
@@ -1243,6 +1260,7 @@
   .services-cta-left p { font-size: 17px; }
 
   /* Pricing */
+  .pricing-page { padding-bottom: 24px; }
   .pricing-table-container { margin: 48px 0 78px; }
   .pricing-table th { padding: 32px 24px; font-size: 28px; }
   .pricing-table td { padding: 20px 22px; font-size: 18px; }
@@ -1251,11 +1269,19 @@
   .pricing-eligibility-title { font-size: 32px; }
   .pricing-eligibility-list li { font-size: 18px; }
   .pricing-disclaimer { font-size: 16px; }
-  .pricing-faq-cards-grid { gap: 28px; margin: 48px 0 76px; }
+  .pricing-faq-cards-grid { gap: 28px; margin: 48px 0 64px; }
   .pricing-faq-card-img-wrap { height: 180px; }
   .pricing-faq-card-content { padding: 26px 22px; }
   .pricing-faq-card-title { font-size: 20px; }
   .pricing-faq-card-text { font-size: 15px; }
+  .pricing-page .bottom-cta-banner { margin-top: 40px; margin-bottom: 20px; }
+  .pricing-page .bottom-cta-banner .bottom-cta-text { font-size: 32px; font-weight: 800; }
+  .pricing-page .bottom-cta-banner .btn {
+    padding: 18px 44px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 12px;
+  }
 
   /* About and Contact */
   .about-page { padding-bottom: 24px; }
