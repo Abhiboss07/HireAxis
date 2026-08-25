@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Column 3: Countries We Cover */}
           <div className="footer-col">
-            <h3 className="footer-col-title">Countries We Cover</h3>
+            <h3 className="footer-col-title">Countries We<br />Cover</h3>
             <ul className="footer-country-list">
               <li><span className="country-flag">🇬🇧</span> UK</li>
               <li><span className="country-flag">🇦🇺</span> Australia</li>
