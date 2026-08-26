@@ -369,8 +369,15 @@ img {
 }
 
 /* Right Column: Social & Countries Dropdown */
+.footer-col-social-countries {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .footer-social-section {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .footer-social-row {
@@ -399,7 +406,7 @@ img {
 }
 
 .footer-countries-section {
-  margin-top: 42px;
+  margin-top: auto;
 }
 
 .footer-select-pill-container {
@@ -655,6 +662,15 @@ img {
     gap: 44px;
   }
   
+  .footer-col-social-countries {
+    grid-column: span 2;
+    height: auto;
+  }
+
+  .footer-countries-section {
+    margin-top: 28px;
+  }
+  
   .footer-contact-bar {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -707,6 +723,15 @@ img {
   .footer-main-grid {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+
+  .footer-col-social-countries {
+    grid-column: span 1;
+    height: auto;
+  }
+
+  .footer-countries-section {
+    margin-top: 24px;
   }
 
   .footer-headline {
