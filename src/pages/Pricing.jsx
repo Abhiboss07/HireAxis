@@ -118,9 +118,13 @@ export default function Pricing() {
           </div>
           <div className="pricing-cost-right">
             <img 
-              src="/images/pricing_job_form_laptop.png" 
+              src="/images/pricing_job_form_laptop.webp" 
               alt="Transparent Application Service Pricing" 
-              className="pricing-cost-img" 
+              className="pricing-cost-img"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="320"
             />
           </div>
         </div>
@@ -150,9 +154,13 @@ export default function Pricing() {
           <div className="pricing-faq-card">
             <div className="pricing-faq-card-img-wrap">
               <img 
-                src="/images/pricing_hidden_fees.png" 
+                src="/images/pricing_hidden_fees.webp" 
                 alt="No Hidden Costs Guarantee" 
-                className="pricing-faq-card-img" 
+                className="pricing-faq-card-img"
+                loading="lazy"
+                decoding="async"
+                width="360"
+                height="220"
               />
             </div>
             <div className="pricing-faq-card-content">
@@ -167,9 +175,13 @@ export default function Pricing() {
           <div className="pricing-faq-card">
             <div className="pricing-faq-card-img-wrap">
               <img 
-                src="/images/pricing_question_blocks.png" 
+                src="/images/pricing_question_blocks.webp" 
                 alt="Hired Early Policy" 
-                className="pricing-faq-card-img" 
+                className="pricing-faq-card-img"
+                loading="lazy"
+                decoding="async"
+                width="360"
+                height="220"
               />
             </div>
             <div className="pricing-faq-card-content">
@@ -184,9 +196,13 @@ export default function Pricing() {
           <div className="pricing-faq-card">
             <div className="pricing-faq-card-img-wrap">
               <img 
-                src="/images/pricing_refund_1040.png" 
+                src="/images/pricing_refund_1040.webp" 
                 alt="Clear Refund Policy" 
-                className="pricing-faq-card-img" 
+                className="pricing-faq-card-img"
+                loading="lazy"
+                decoding="async"
+                width="360"
+                height="220"
               />
             </div>
             <div className="pricing-faq-card-content">
@@ -201,9 +217,13 @@ export default function Pricing() {
         {/* Bottom CTA Banner */}
         <div className="bottom-cta-banner">
           <img 
-            src="/images/bottom_cta_banner.png" 
+            src="/images/bottom_cta_banner.webp" 
             alt="Pick Your Country Banner" 
-            className="bottom-cta-bg-img" 
+            className="bottom-cta-bg-img"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="180"
           />
           <div className="bottom-cta-content">
             <h2 className="bottom-cta-text">Pick Your Country to See Exact Pricing</h2>

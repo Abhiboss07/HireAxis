@@ -19,14 +19,14 @@ export default function Home() {
   ];
 
   const countries = [
-    { name: "United Kingdom", img: "/images/country_uk.png", flag: "🇬🇧" },
-    { name: "United States", img: "/images/country_usa.png", flag: "🇺🇸" },
-    { name: "Canada", img: "/images/country_canada.png", flag: "🇨🇦" },
-    { name: "New Zealand", img: "/images/country_new_zealand.png", flag: "🇳🇿" },
-    { name: "Germany", img: "/images/country_germany.png", flag: "🇩🇪" },
-    { name: "Singapore", img: "/images/country_singapore.png", flag: "🇸🇬" },
-    { name: "UAE", img: "/images/country_uae.png", flag: "🇦🇪" },
-    { name: "Malta", img: "/images/country_malta.png", flag: "🇲🇹" }
+    { name: "United Kingdom", img: "/images/country_uk.webp", flag: "🇬🇧" },
+    { name: "United States", img: "/images/country_usa.webp", flag: "🇺🇸" },
+    { name: "Canada", img: "/images/country_canada.webp", flag: "🇨🇦" },
+    { name: "New Zealand", img: "/images/country_new_zealand.webp", flag: "🇳🇿" },
+    { name: "Germany", img: "/images/country_germany.webp", flag: "🇩🇪" },
+    { name: "Singapore", img: "/images/country_singapore.webp", flag: "🇸🇬" },
+    { name: "UAE", img: "/images/country_uae.webp", flag: "🇦🇪" },
+    { name: "Malta", img: "/images/country_malta.webp", flag: "🇲🇹" }
   ];
 
   return (
@@ -52,9 +52,13 @@ export default function Home() {
           </div>
           <div className="home-hero-right">
             <img 
-              src="/images/hero_laptop_succulent.png" 
+              src="/images/hero_laptop_succulent.webp" 
               alt="HireAxis Job Application Tracker Dashboard" 
-              className="hero-laptop-img" 
+              className="hero-laptop-img"
+              fetchPriority="high"
+              decoding="async"
+              width="540"
+              height="340"
             />
           </div>
         </div>
@@ -113,9 +117,13 @@ export default function Home() {
       <section className="container home-quote-section">
         <div className="quote-banner-container">
           <img 
-            src="/images/home_quote_banner.png" 
+            src="/images/home_quote_banner.webp" 
             alt="HireAxis Dedicated Application Support Banner" 
             className="quote-banner-img" 
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="220"
           />
           <div className="quote-banner-text-overlay">
             HireAxis is a job application service that searches, tailors, and submits job applications behalf of candidates who already hold valid work rights in their target country. It is not a recruitment agency, visa consultancy, or sponsorship provider; it is dedicated application support for people who are qualified to work but don't have 15 hours a week to spend on job boards.
@@ -206,9 +214,13 @@ export default function Home() {
             <div className="who-card">
               <div className="who-card-img-wrap">
                 <img 
-                  src="/images/who_students.png" 
+                  src="/images/who_students.webp" 
                   alt="Students and Graduates" 
                   className="who-card-img" 
+                  loading="lazy"
+                  decoding="async"
+                  width="360"
+                  height="220"
                 />
               </div>
               <h3 className="who-card-title">Students &amp; graduates</h3>
@@ -221,9 +233,13 @@ export default function Home() {
             <div className="who-card">
               <div className="who-card-img-wrap">
                 <img 
-                  src="/images/who_movers.png" 
+                  src="/images/who_movers.webp" 
                   alt="Newcomers and Recent Movers" 
                   className="who-card-img" 
+                  loading="lazy"
+                  decoding="async"
+                  width="360"
+                  height="220"
                 />
               </div>
               <h3 className="who-card-title">Newcomers &amp; recent movers</h3>
@@ -236,9 +252,13 @@ export default function Home() {
             <div className="who-card">
               <div className="who-card-img-wrap">
                 <img 
-                  src="/images/who_professionals.png" 
+                  src="/images/who_professionals.webp" 
                   alt="Busy Professionals" 
                   className="who-card-img" 
+                  loading="lazy"
+                  decoding="async"
+                  width="360"
+                  height="220"
                 />
               </div>
               <h3 className="who-card-title">Busy professionals</h3>
@@ -251,14 +271,18 @@ export default function Home() {
             <div className="who-card">
               <div className="who-card-img-wrap">
                 <img 
-                  src="/images/who_switchers.png" 
+                  src="/images/who_switchers.webp" 
                   alt="Career Switchers" 
                   className="who-card-img" 
+                  loading="lazy"
+                  decoding="async"
+                  width="360"
+                  height="220"
                 />
               </div>
               <h3 className="who-card-title">Career switchers</h3>
               <p className="who-card-desc">
-                changing industries takes volume and tailoring. We supply both.
+                changing industries or roles? We help position transferable skills where they count.
               </p>
             </div>
           </div>
@@ -345,9 +369,13 @@ export default function Home() {
 
             <div className="whats-included-right">
               <img 
-                src="/images/whats_included_laptop_mug.png" 
+                src="/images/whats_included_laptop_mug.webp" 
                 alt="HireAxis Dashboard and Analytics Widget" 
                 className="whats-included-img" 
+                loading="lazy"
+                decoding="async"
+                width="500"
+                height="400"
               />
             </div>
           </div>
@@ -369,6 +397,10 @@ export default function Home() {
                     src={country.img} 
                     alt={country.name} 
                     className="country-img" 
+                    loading="lazy"
+                    decoding="async"
+                    width="320"
+                    height="200"
                   />
                 </div>
                 <div className="country-bottom-bar">
@@ -465,9 +497,13 @@ export default function Home() {
       <section className="container">
         <div className="bottom-cta-banner">
           <img 
-            src="/images/bottom_cta_banner.png" 
+            src="/images/bottom_cta_banner.webp" 
             alt="HireAxis Ready To Apply Banner" 
             className="bottom-cta-bg-img" 
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="180"
           />
           <div className="bottom-cta-content">
             <h2 className="bottom-cta-text">Start Your Applications This Week</h2>

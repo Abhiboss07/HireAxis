@@ -35,9 +35,13 @@ export default function About() {
           <div className="about-exists-section">
             <div className="about-exists-left">
               <img 
-                src="/images/about_woman_tablet.png" 
+                src="/images/about_woman_tablet.webp" 
                 alt="HireAxis Dedicated Application Team" 
-                className="about-exists-img" 
+                className="about-exists-img"
+                loading="lazy"
+                decoding="async"
+                width="480"
+                height="320"
               />
             </div>
             <div className="about-exists-right">
@@ -164,9 +168,13 @@ export default function About() {
         {/* Bottom CTA Banner with Dual Buttons */}
         <div className="bottom-cta-banner">
           <img 
-            src="/images/bottom_cta_banner.png" 
+            src="/images/bottom_cta_banner.webp" 
             alt="Autopilot Search Banner" 
-            className="bottom-cta-bg-img" 
+            className="bottom-cta-bg-img"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="180"
           />
           <div className="bottom-cta-content">
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>

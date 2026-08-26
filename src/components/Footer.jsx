@@ -20,7 +20,15 @@ export default function Footer() {
               Finding the right job takes time. HireAxis helps make the process simpler with structured job application support designed to help candidates move forward in their careers.
             </p>
             <Link to="/" className="footer-logo-link">
-              <img src="/images/logo_white.png" alt="HireAxis" className="footer-brand-logo" />
+              <img 
+                src="/images/logo_white.webp" 
+                alt="HireAxis" 
+                className="footer-brand-logo"
+                loading="lazy"
+                decoding="async"
+                width="180"
+                height="64"
+              />
             </Link>
           </div>
 

@@ -36,9 +36,13 @@ export default function Services() {
           </div>
           <div className="services-feature-right">
             <img 
-              src="/images/services_laptop_window.png" 
+              src="/images/services_laptop_window.webp" 
               alt="Weekly Job Applications Workspace" 
-              className="services-feature-img" 
+              className="services-feature-img"
+              loading="lazy"
+              decoding="async"
+              width="460"
+              height="300"
             />
           </div>
         </div>
@@ -57,9 +61,13 @@ export default function Services() {
         <div className="services-feature-row reverse">
           <div className="services-feature-left">
             <img 
-              src="/images/services_resume.png" 
+              src="/images/services_resume.webp" 
               alt="ATS Resume Optimization and Keyword Formatting" 
-              className="services-feature-img" 
+              className="services-feature-img"
+              loading="lazy"
+              decoding="async"
+              width="460"
+              height="300"
             />
           </div>
           <div className="services-feature-right">
@@ -90,9 +98,13 @@ export default function Services() {
           </div>
           <div className="services-feature-right">
             <img 
-              src="/images/services_tablet_form.png" 
+              src="/images/services_tablet_form.webp" 
               alt="Live Application Tracker on Tablet" 
-              className="services-feature-img" 
+              className="services-feature-img"
+              loading="lazy"
+              decoding="async"
+              width="460"
+              height="300"
             />
           </div>
         </div>
@@ -101,9 +113,13 @@ export default function Services() {
         <div className="services-feature-row reverse">
           <div className="services-feature-left">
             <img 
-              src="/images/services_interview_queue.png" 
+              src="/images/services_interview_queue.webp" 
               alt="Interview Preparation and Candidate Support" 
-              className="services-feature-img" 
+              className="services-feature-img"
+              loading="lazy"
+              decoding="async"
+              width="460"
+              height="300"
             />
           </div>
           <div className="services-feature-right">

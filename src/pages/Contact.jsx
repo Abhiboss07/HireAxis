@@ -21,9 +21,13 @@ export default function Contact() {
         {/* Form Container with Background Woman Image */}
         <div className="contact-hero-container">
           <img
-            src="/images/contact_woman_bg.png"
+            src="/images/contact_woman_bg.webp"
             alt="HireAxis Dedicated Support Team"
             className="contact-bg-woman-img"
+            fetchPriority="high"
+            decoding="async"
+            width="1200"
+            height="800"
           />
 
           <div className="contact-form-card">
