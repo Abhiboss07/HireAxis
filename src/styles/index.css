@@ -305,25 +305,25 @@ img {
 
 .footer-headline {
   color: var(--color-accent-lime);
-  font-size: 76px;
+  font-size: 62px;
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.025em;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .footer-main-grid {
   display: grid;
   grid-template-columns: 1.45fr 1fr 1.3fr;
   gap: 48px;
-  padding-bottom: 44px;
+  padding-bottom: 40px;
 }
 
 .footer-col-title {
   color: var(--color-white);
-  font-size: 44px;
-  font-weight: 900;
-  margin-bottom: 24px;
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 22px;
   line-height: 1.15;
   letter-spacing: -0.015em;
 }
@@ -688,11 +688,11 @@ img {
   }
   
   .footer-headline {
-    font-size: 64px;
+    font-size: 52px;
   }
   
   .footer-col-title {
-    font-size: 38px;
+    font-size: 32px;
   }
   
   .page-title {
@@ -746,11 +746,11 @@ img {
   }
 
   .footer-headline {
-    font-size: 46px;
+    font-size: 40px;
   }
 
   .footer-col-title {
-    font-size: 32px;
+    font-size: 28px;
   }
   
   .footer-content {
