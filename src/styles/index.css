@@ -395,7 +395,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin-top: 14px;
+  margin-top: 52px;
 }
 
 .footer-social-btn {
@@ -695,6 +695,10 @@ img {
 
   .footer-countries-section {
     margin-top: 28px;
+  }
+
+  .footer-social-row {
+    margin-top: 20px;
   }
   
   .footer-contact-bar {
