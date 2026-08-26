@@ -235,13 +235,13 @@ img {
 }
 
 .header-logo-img {
-  height: 34px;
+  height: 38px;
   width: auto;
   display: block;
 }
 
 .footer-logo-img {
-  height: 36px;
+  height: 38px;
   width: auto;
   display: block;
   margin-bottom: 8px;
@@ -298,42 +298,42 @@ img {
 .site-footer {
   background-color: var(--color-primary-dark);
   color: var(--color-white);
-  padding-top: 56px;
-  padding-bottom: 24px;
+  padding-top: 64px;
+  padding-bottom: 28px;
   margin-top: auto;
 }
 
 .footer-headline {
   color: var(--color-accent-lime);
-  font-size: 58px;
+  font-size: 76px;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.025em;
-  margin-bottom: 38px;
+  margin-bottom: 48px;
 }
 
 .footer-main-grid {
   display: grid;
-  grid-template-columns: 1.4fr 0.95fr 1.25fr;
-  gap: 52px;
-  padding-bottom: 36px;
+  grid-template-columns: 1.45fr 1fr 1.3fr;
+  gap: 48px;
+  padding-bottom: 44px;
 }
 
 .footer-col-title {
   color: var(--color-white);
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 20px;
+  font-size: 44px;
+  font-weight: 900;
+  margin-bottom: 24px;
   line-height: 1.15;
   letter-spacing: -0.015em;
 }
 
 .footer-about-text {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 16.5px;
-  line-height: 1.58;
-  max-width: 350px;
-  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 32px;
 }
 
 .footer-logo-link {
@@ -341,7 +341,7 @@ img {
 }
 
 .footer-brand-logo {
-  height: 48px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -350,14 +350,14 @@ img {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   padding: 0;
   margin: 0;
 }
 
 .footer-link-list a {
   color: rgba(255, 255, 255, 0.92);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 500;
   display: inline-block;
   transition: var(--transition);
@@ -383,7 +383,7 @@ img {
 .footer-social-row {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
 }
 
 .footer-social-btn {
@@ -400,8 +400,8 @@ img {
 }
 
 .footer-social-btn svg {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: block;
 }
 
@@ -413,7 +413,7 @@ img {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
 }
 
 .footer-select-pill {
@@ -421,13 +421,13 @@ img {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 2px solid var(--color-accent-lime);
+  border: 2.5px solid var(--color-accent-lime);
   border-radius: 999px;
   background-color: transparent;
   color: var(--color-white);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
-  padding: 13px 44px 13px 22px;
+  padding: 15px 48px 15px 24px;
   cursor: pointer;
   outline: none;
   transition: var(--transition);
@@ -445,7 +445,7 @@ img {
 
 .footer-select-chevron-icon {
   position: absolute;
-  right: 18px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;

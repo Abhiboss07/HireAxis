@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="logo-link">
-          <img src="/images/logo.png" alt="HireAxis" className="header-logo-img" />
+          <img src="/images/logo_white.png" alt="HireAxis" className="header-logo-img" />
         </Link>
 
         <nav>
