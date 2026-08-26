@@ -88,7 +88,7 @@ export default function Footer() {
                   }}
                   aria-label="Select target Country"
                 >
-                  <option value="" disabled>Select your target Company</option>
+                  <option value="" disabled>Select your target Country</option>
                   <option value="uk">🇬🇧 UK (United Kingdom)</option>
                   <option value="australia">🇦🇺 Australia</option>
                   <option value="canada">🇨🇦 Canada</option>
