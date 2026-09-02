@@ -1,0 +1,68 @@
+# ====================================================================
+# HireAxis Production .htaccess for GoDaddy / Apache Web Hosting
+# ====================================================================
+
+# 1. Enable Rewrite Engine for Single Page Application (SPA) Routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Force HTTPS (optional if SSL is enabled on GoDaddy)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Do not rewrite existing files or directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  
+  # Rewrite all other URLs to index.html for React Router
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# 2. MIME Types
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg .svgz
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+</IfModule>
+
+# 3. Compression (Gzip / Deflate)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# 4. Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Default expiration: 1 hour
+  ExpiresDefault "access plus 1 hour"
+  
+  # HTML: Do not cache aggressively so new releases take effect immediately
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # CSS & JavaScript (Vite generated with unique hashes): 1 year
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  
+  # Media & Images: 1 year
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# 5. Security Headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
