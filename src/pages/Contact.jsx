@@ -77,13 +77,13 @@ export default function Contact() {
           <div>
             <h2 className="social-channels-title">Follow our Social Media</h2>
             <div className="social-icons-row">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn linkedin" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/hire-axis/" target="_blank" rel="noopener noreferrer" className="social-icon-btn linkedin" aria-label="LinkedIn">
                 in
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn facebook" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61593328522727" target="_blank" rel="noopener noreferrer" className="social-icon-btn facebook" aria-label="Facebook">
                 f
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn instagram" aria-label="Instagram">
+              <a href="https://www.instagram.com/hireaxis_/" target="_blank" rel="noopener noreferrer" className="social-icon-btn instagram" aria-label="Instagram">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
